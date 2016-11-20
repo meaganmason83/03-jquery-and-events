@@ -73,6 +73,12 @@ articleView.handleMainNav = function () {
 
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
+  $('.read-on').on('click', function(eve) {
+    eve.preventDefault()
+    $(this).parent().find('.read-on').hide()
+    $(this).parent().find('.article-body *:nth-of-type(n+2)').show()
+
+  })
   /* TODO: Add a delegated event handler to reveal the remaining paragraphs.
   When a .read-on link is clicked, we can:
   1. Prevent the defaul actionof a link.
@@ -88,3 +94,4 @@ articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
+articleView.setTeasers();
