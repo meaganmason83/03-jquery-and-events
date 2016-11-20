@@ -75,7 +75,7 @@ articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function(eve) {
     eve.preventDefault()
-    $(this).parent().find('.read-on').hide()
+    $(this).parent().find('.read-on').text('Show Less')
     $(this).parent().find('.article-body *:nth-of-type(n+2)').show()
 
   })
@@ -85,7 +85,7 @@ articleView.setTeasers = function() {
   2. Reveal everything in that particular article now.
   3. Hide that read-on link!
 
-  // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
+  // TECHNICALLY DONE - THE BEST KIND OF DONE STRETCH GOAl!: change the 'Read On' link to 'Show Less'
   */
 };
 
