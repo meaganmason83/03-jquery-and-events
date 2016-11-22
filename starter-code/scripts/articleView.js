@@ -21,8 +21,7 @@ articleView.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $(`article[data-author="${ $(this).val() }"]`).fadeIn(1000)
-      // $('article[data-author=" ' + $(this).val() + '"]').show();
+      $(`article[data-author="${ $(this).val() }"]`).fadeIn(1000);
       //     /* TODO: DONE: If the slect box changes to an option that has a value, we should:
       //         1. Hide all of the articles
       //         2. Fade in only the articles that match based on on the author
@@ -40,13 +39,12 @@ articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $(`article[data-category="${ $(this).val() }"]`).fadeIn(1000)
-
+      $(`article[data-category="${ $(this).val() }"]`).fadeIn(1000);
       /* TODO: Done: Just like we do for #author-filter above, we should also handle
       change events on the #category-filter element. Be sure to reset the
       #author-filter while you're at it! */
     } else {
-      $('article').show();
+      $('article').not('.template').show();
     }
     $('#category-filter').val('');
     $('#author-filter').val('');
@@ -74,9 +72,9 @@ articleView.handleMainNav = function () {
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function(eve) {
-    eve.preventDefault()
-    $(this).parent().find('.read-on').text('Show Less')
-    $(this).parent().find('.article-body *:nth-of-type(n+2)').show()
+    eve.preventDefault();
+    $(this).parent().find('.read-on').text('Show Less');
+    $(this).parent().find('.article-body *:nth-of-type(n+2)').show();
 
   })
   /* TODO: Add a delegated event handler to reveal the remaining paragraphs.
